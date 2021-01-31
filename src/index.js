@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
 import Routers from "Routers.js";
 import TopBar from "components/TopBar/TopBar.js";
+import particleDark from "ParticlesConfigs/particlesjs-dark.json";
+import particleLight from "ParticlesConfigs/particlesjs-light.json";
 import "./index.scss";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { lightBlue, indigo, deepPurple, pink } from "@material-ui/core/colors";
-
+import Particles from 'react-particles-js';
 
 const App = () => {
   const [isDarkTheme, SetDarkTheme] = useState(JSON.parse(localStorage.getItem("isDarkTheme")))
@@ -43,7 +45,7 @@ const App = () => {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <BrowserRouter>
-        <div>hi</div>
+        <Particles params={isDarkTheme ? particleDark : particleLight} style={{ position: "fixed", top: "0", left: "0", right: "0", bottom: "0" }} />
         <TopBar toggleTheme={toggleThemeHandler} isDarkTheme={isDarkTheme} />
         <Routers />
       </BrowserRouter>
