@@ -12,6 +12,7 @@ import Particles from 'react-particles-js';
 
 const App = () => {
   const [isDarkTheme, SetDarkTheme] = useState(JSON.parse(localStorage.getItem("isDarkTheme")))
+  const [currentLang, setLang] = useState("uk");
   const darkTheme = createMuiTheme({
     palette: {
       type: "dark",
@@ -32,6 +33,10 @@ const App = () => {
       secondary: {
         main: pink[700],
       },
+      background: {
+        paper: "#fafafa",
+        default: "#ebebeb"
+      }
     },
   })
 
@@ -42,12 +47,22 @@ const App = () => {
     });
   }
 
+  function toggleLangHandler() {
+    currentLang === "uk" ? setLang("en") : setLang("uk");
+  }
+
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <BrowserRouter>
-        <Particles params={isDarkTheme ? particleDark : particleLight} style={{ position: "fixed", top: "0", left: "0", right: "0", bottom: "0" }} />
-        <TopBar toggleTheme={toggleThemeHandler} isDarkTheme={isDarkTheme} />
-        <Routers />
+        <Particles
+          params={isDarkTheme ? particleDark : particleLight}
+          style={{ position: "fixed", top: "0", left: "0", right: "0", bottom: "0", zIndex: "-1" }} />
+        <TopBar
+          toggleTheme={toggleThemeHandler}
+          toggleLang={toggleLangHandler}
+          isDarkTheme={isDarkTheme}
+          currentLang={currentLang} />
+        <Routers currentLang={currentLang} />
       </BrowserRouter>
     </ThemeProvider >
   )
