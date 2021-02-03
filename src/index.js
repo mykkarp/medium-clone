@@ -9,10 +9,15 @@ import "./index.scss";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { lightBlue, indigo, deepPurple, pink } from "@material-ui/core/colors";
 import Particles from 'react-particles-js';
+import firebase from "firebase";
+import firebaseConfig from "firebaseConfig/firebaseConfig.json";
+firebase.initializeApp(firebaseConfig);
 
+const db = firebase.database();
+console.log(db);
 const App = () => {
-  const [isDarkTheme, SetDarkTheme] = useState(JSON.parse(localStorage.getItem("isDarkTheme")))
-  const [currentLang, setLang] = useState("uk");
+  const [isDarkTheme, SetDarkTheme] = useState(JSON.parse(localStorage.getItem("isDarkTheme")));
+  const [currentLang, setLang] = useState(localStorage.getItem("currentLang") || "uk");
   const darkTheme = createMuiTheme({
     palette: {
       type: "dark",
@@ -48,7 +53,13 @@ const App = () => {
   }
 
   function toggleLangHandler() {
-    currentLang === "uk" ? setLang("en") : setLang("uk");
+    if (currentLang === "uk") {
+      setLang("en");
+      localStorage.setItem("currentLang", "en");
+    } else {
+      setLang("uk");
+      localStorage.setItem("currentLang", "uk");
+    }
   }
 
   return (
