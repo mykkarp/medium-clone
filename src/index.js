@@ -9,12 +9,16 @@ import "./index.scss";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { lightBlue, indigo, deepPurple, pink } from "@material-ui/core/colors";
 import Particles from 'react-particles-js';
-import firebase from "firebase";
-import firebaseConfig from "firebaseConfig/firebaseConfig.json";
-firebase.initializeApp(firebaseConfig);
+// import firebase from "firebase";
+// import firebaseConfig from "firebaseConfig/firebaseConfig.json";
+// firebase.initializeApp(firebaseConfig);
 
-const db = firebase.database();
-console.log(db);
+// const db = firebase.database();
+// const users = db.ref("users")
+// db.ref(key).push(value)
+// users.on("value", elem => {
+//   console.log(elem.val());
+// });
 const App = () => {
   const [isDarkTheme, SetDarkTheme] = useState(JSON.parse(localStorage.getItem("isDarkTheme")));
   const [currentLang, setLang] = useState(localStorage.getItem("currentLang") || "uk");
