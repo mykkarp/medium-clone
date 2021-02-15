@@ -9,19 +9,22 @@ import "./index.scss";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { lightBlue, indigo, deepPurple, pink } from "@material-ui/core/colors";
 import Particles from 'react-particles-js';
-// import firebase from "firebase";
-// import firebaseConfig from "firebaseConfig/firebaseConfig.json";
-// firebase.initializeApp(firebaseConfig);
+import { projectDB } from "firebaseConfig/firebaseConfig.js";
 
-// const db = firebase.database();
-// const users = db.ref("users")
-// db.ref(key).push(value)
-// users.on("value", elem => {
-//   console.log(elem.val());
-// });
 const App = () => {
   const [isDarkTheme, SetDarkTheme] = useState(JSON.parse(localStorage.getItem("isDarkTheme")));
   const [currentLang, setLang] = useState(localStorage.getItem("currentLang") || "uk");
+  const [userName, setUserName] = useState("");
+  const [isLogin, setIsLogin] = useState(false);
+
+  React.useEffect(() => {
+    if (!localStorage.getItem("currentUserId")) return;
+    projectDB.ref('/users/' + localStorage.getItem("currentUserId")).on('value', (snapshot) => {
+      const data = snapshot.val();
+      setUserName(data.username);
+    });
+  }, [isLogin]);
+
   const darkTheme = createMuiTheme({
     palette: {
       type: "dark",
@@ -71,13 +74,24 @@ const App = () => {
       <BrowserRouter>
         <Particles
           params={isDarkTheme ? particleDark : particleLight}
-          style={{ position: "fixed", top: "0", left: "0", right: "0", bottom: "0", zIndex: "-1" }} />
+          style={{ position: "fixed", top: "0", left: "0", right: "0", bottom: "0", zIndex: "-1" }}
+        />
         <TopBar
           toggleTheme={toggleThemeHandler}
           toggleLang={toggleLangHandler}
           isDarkTheme={isDarkTheme}
-          currentLang={currentLang} />
-        <Routers currentLang={currentLang} />
+          currentLang={currentLang}
+          userName={userName}
+          isLogin={isLogin}
+          setIsLogin={setIsLogin}
+        />
+        <Routers
+          currentLang={currentLang}
+          setUserName={setUserName}
+          userName={userName}
+          isLogin={isLogin}
+          setIsLogin={setIsLogin}
+        />
       </BrowserRouter>
     </ThemeProvider >
   )
