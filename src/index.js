@@ -19,7 +19,7 @@ const App = () => {
 
   React.useEffect(() => {
     if (!localStorage.getItem("currentUserId")) return;
-    projectDB.ref('/users/' + localStorage.getItem("currentUserId")).on('value', (snapshot) => {
+    projectDB.ref('users/' + localStorage.getItem("currentUserId")).on('value', (snapshot) => {
       const data = snapshot.val();
       setUserName(data.username);
     });
@@ -47,7 +47,7 @@ const App = () => {
       },
       background: {
         paper: "#fafafa",
-        default: "#ebebeb"
+        default: "#dddddd"
       }
     },
   })

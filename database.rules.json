@@ -1,6 +1,18 @@
 {
   "rules": {
-    ".read": "now < 1614891600000",
-    ".write": "now < 1614891600000"
+    "articles": {
+      "$article": {
+        "$owner": {
+          ".read": "true",
+          ".write": "auth != null && auth.uid == $owner"
+        }
+      }
+    },
+    "users": {
+      "$uid": {
+        ".read": "true",
+        ".write": "auth != null && auth.uid == $uid"
+      }
+    }
   }
 }
