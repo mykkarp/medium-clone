@@ -1,9 +1,9 @@
 {
   "rules": {
     "articles": {
+      ".read": "true",
       "$article": {
         "$owner": {
-          ".read": "true",
           ".write": "auth != null && auth.uid == $owner"
         }
       }

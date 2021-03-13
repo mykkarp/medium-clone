@@ -9,21 +9,11 @@ import "./index.scss";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { lightBlue, indigo, deepPurple, pink } from "@material-ui/core/colors";
 import Particles from 'react-particles-js';
-import { projectDB } from "firebaseConfig/firebaseConfig.js";
 
 const App = () => {
   const [isDarkTheme, SetDarkTheme] = useState(JSON.parse(localStorage.getItem("isDarkTheme")));
   const [currentLang, setLang] = useState(localStorage.getItem("currentLang") || "uk");
-  const [userName, setUserName] = useState("");
   const [isLogin, setIsLogin] = useState(false);
-
-  React.useEffect(() => {
-    if (!localStorage.getItem("currentUserId")) return;
-    projectDB.ref('users/' + localStorage.getItem("currentUserId")).on('value', (snapshot) => {
-      const data = snapshot.val();
-      setUserName(data.username);
-    });
-  }, [isLogin]);
 
   const darkTheme = createMuiTheme({
     palette: {
@@ -81,14 +71,11 @@ const App = () => {
           toggleLang={toggleLangHandler}
           isDarkTheme={isDarkTheme}
           currentLang={currentLang}
-          userName={userName}
           isLogin={isLogin}
           setIsLogin={setIsLogin}
         />
         <Routers
           currentLang={currentLang}
-          setUserName={setUserName}
-          userName={userName}
           isLogin={isLogin}
           setIsLogin={setIsLogin}
         />
