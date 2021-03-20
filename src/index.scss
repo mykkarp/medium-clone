@@ -89,6 +89,9 @@ h6 {
   min-width: 100%;
   min-height: 100%;
 }
+.MuiCardHeader-action {
+  max-width: 100%;
+}
 
 @media screen and (max-width: 700px) {
   .container {
