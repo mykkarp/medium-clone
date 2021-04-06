@@ -13,8 +13,7 @@ import Particles from 'react-particles-js';
 const App = () => {
   const [isDarkTheme, SetDarkTheme] = useState(JSON.parse(localStorage.getItem("isDarkTheme")));
   const [currentLang, setLang] = useState(localStorage.getItem("currentLang") || "uk");
-  const [isLogin, setIsLogin] = useState(false);
-
+  const [isLogin, setIsLogin] = useState(!!localStorage.getItem("currentUserId"));
   const darkTheme = createMuiTheme({
     palette: {
       type: "dark",
