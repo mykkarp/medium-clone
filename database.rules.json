@@ -3,6 +3,7 @@
     "articles": {
       ".read": "true",
       "$article": {
+        ".write": "true",
         "$owner": {
           ".write": "auth != null && auth.uid == $owner"
         }
