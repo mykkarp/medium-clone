@@ -92,6 +92,12 @@ h6 {
 .MuiCardHeader-action {
   max-width: 100%;
 }
+.MuiButton-root {
+  min-width: 0px !important;
+}
+.MuiCardContent-root:last-child {
+  padding-bottom: 16px !important;
+}
 
 @media screen and (max-width: 700px) {
   .container {

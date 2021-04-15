@@ -9,6 +9,11 @@
         }
       }
     },
+    "tags": {
+      ".read": "true",
+      ".write": "true",
+      ".indexOn": "lastUses"
+    },
     "users": {
       "$uid": {
         ".read": "true",
