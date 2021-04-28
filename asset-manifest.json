@@ -6,18 +6,18 @@
     "runtime-main.js": "/medium-clone/static/js/runtime-main.bfe789b6.js",
     "runtime-main.js.map": "/medium-clone/static/js/runtime-main.bfe789b6.js.map",
     "static/css/2.3ec35328.chunk.css": "/medium-clone/static/css/2.3ec35328.chunk.css",
-    "static/js/2.100b47e5.chunk.js": "/medium-clone/static/js/2.100b47e5.chunk.js",
-    "static/js/2.100b47e5.chunk.js.map": "/medium-clone/static/js/2.100b47e5.chunk.js.map",
+    "static/js/2.683ceb39.chunk.js": "/medium-clone/static/js/2.683ceb39.chunk.js",
+    "static/js/2.683ceb39.chunk.js.map": "/medium-clone/static/js/2.683ceb39.chunk.js.map",
     "index.html": "/medium-clone/index.html",
     "static/css/2.3ec35328.chunk.css.map": "/medium-clone/static/css/2.3ec35328.chunk.css.map",
     "static/css/main.9c96c41f.chunk.css.map": "/medium-clone/static/css/main.9c96c41f.chunk.css.map",
-    "static/js/2.100b47e5.chunk.js.LICENSE.txt": "/medium-clone/static/js/2.100b47e5.chunk.js.LICENSE.txt",
+    "static/js/2.683ceb39.chunk.js.LICENSE.txt": "/medium-clone/static/js/2.683ceb39.chunk.js.LICENSE.txt",
     "static/media/en.fd4640c4.jpg": "/medium-clone/static/media/en.fd4640c4.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.bfe789b6.js",
     "static/css/2.3ec35328.chunk.css",
-    "static/js/2.100b47e5.chunk.js",
+    "static/js/2.683ceb39.chunk.js",
     "static/css/main.9c96c41f.chunk.css",
     "static/js/main.1d5899be.chunk.js"
   ]
