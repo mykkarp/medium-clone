@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
 import Routers from "Routers.js";
@@ -9,6 +9,7 @@ import "./index.scss";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { lightBlue, indigo, deepPurple, pink } from "@material-ui/core/colors";
 import Particles from 'react-particles-js';
+import { projectDB } from "firebaseConfig/firebaseConfig.js";
 
 const App = () => {
   const [isDarkTheme, SetDarkTheme] = useState(JSON.parse(localStorage.getItem("isDarkTheme")));
@@ -57,6 +58,16 @@ const App = () => {
       localStorage.setItem("currentLang", "uk");
     }
   }
+
+  useEffect(() => {
+    projectDB.ref('users/' + localStorage.getItem("currentUserId")).on('value', (snapshot) => {
+      const data = snapshot.val();
+      if (!data) {
+        localStorage.setItem("currentUserId", "");
+        setIsLogin(false);
+      }
+    });
+  }, []);
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
