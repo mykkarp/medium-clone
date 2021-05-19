@@ -94,6 +94,11 @@ const App = () => {
   )
 }
 
+window.addEventListener("offline", (e) => {
+  e.preventDefault();
+  console.log("connection lost");
+});
+
 ReactDOM.render(
   <App />,
   document.getElementById('root')
