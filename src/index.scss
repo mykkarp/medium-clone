@@ -94,13 +94,56 @@ img {
   border: none;
   border-bottom: 1px #888 solid;
 }
+.rdw-editor-toolbar [aria-selected="true"] {
+  background-color: rgb(173, 215, 255);
+  border: 1px rgb(35, 149, 255) solid;
+}
 .rdw-editor-main {
   padding: 0px 10px;
   margin: 0px 5px 5px 5px;
   background-color: #ddd;
 }
+.rdw-editor-main img {
+  max-width: 100%;
+}
 .rdw-editor-wrapper {
   color: #111 !important;
+}
+.article-text {
+  padding: 10px;
+  color: #111;
+  background-color: #ddd;
+  margin: 0px 0px 15px 0px;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+.article-text img {
+  max-width: 100%;
+}
+.article-text p {
+  margin: 0px 0px 5px 0px;
+}
+.article-text p:last-child {
+  margin: 0;
+}
+.article-text ul li {
+  list-style: disc;
+  padding: 0px 0px 5px px;
+}
+.article-text ul > ul li {
+  list-style: square;
+}
+.article-text ul > ul > ul li {
+  list-style: circle;
+}
+.article-text ul,
+.article-text ol {
+  padding: 0px 0px 0px 15px;
+}
+.article-text code {
+  background-color: #fff;
+  padding: 1px 3px;
+  border-radius: 2px;
 }
 
 @media screen and (max-width: 700px) {
