@@ -89,27 +89,18 @@ img {
   padding-bottom: 16px !important;
 }
 
-#mui-rte-container > div:nth-child(2) {
-  position: static !important;
+.rdw-editor-toolbar {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 1px #888 solid;
 }
-#mui-rte-editor-container {
-  padding: 5px;
-  margin: 10px 0px;
+.rdw-editor-main {
+  padding: 0px 10px;
+  margin: 0px 5px 5px 5px;
+  background-color: #ddd;
 }
-#mui-rte-editor-container ul li {
-  list-style: disc;
-}
-#mui-rte-editor-container ul {
-  padding: 0px 0px 0px 17px;
-}
-#mui-rte-editor-container ol {
-  padding: 0px 0px 0px 17px;
-}
-#mui-rte-editor-container blockquote {
-  background: #bbb !important;
-  padding: 0px 0px 0px 8px;
-  margin: 0px 0px 0px -5px;
-  border-left: 5px solid #333;
+.rdw-editor-wrapper {
+  color: #111 !important;
 }
 
 @media screen and (max-width: 700px) {
