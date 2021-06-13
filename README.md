@@ -3,7 +3,7 @@
 🖥Deploy: https://urfeen.github.io/medium-clone/
 ___
 
-🛠Functionality:
+### 🛠Functionality
 - Authentication/Authorization;
 - Writing, formatting article. Adding tags;
 - Reading, rating, commenting on articles. Watching article statistic;
