@@ -12,7 +12,7 @@ The medium-clone supports such features as:
 - Subscriptions/Subscribers;
 - Languages change (ua-en);
 - Dark/White theme;
-- Adaptive layout;
+- Adaptive layout.
 
 ____
 
