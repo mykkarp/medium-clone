@@ -1,6 +1,6 @@
-## Medium clone
+# Medium clone
 
-🖥Deploy: https://urfeen.github.io/medium-clone/
+### 🖥Deploy: https://urfeen.github.io/medium-clone/
 ___
 
 ### 🛠Functionality
@@ -16,7 +16,7 @@ The medium-clone supports such features as:
 
 ____
 
-Screenshots:
+### 🖼Screenshots
 
 ![main-page](https://user-images.githubusercontent.com/59795550/121805515-3e54dc00-cc54-11eb-83c7-7a072fb2180c.png)
 ![new-article](https://user-images.githubusercontent.com/59795550/121805529-54fb3300-cc54-11eb-9809-975ecd606a5c.png)
