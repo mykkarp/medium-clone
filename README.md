@@ -4,6 +4,7 @@
 ___
 
 ### 🛠Functionality
+The medium-clone supports such features as:
 - Authentication/Authorization;
 - Writing, formatting article. Adding tags;
 - Reading, rating, commenting on articles. Watching article statistic;
