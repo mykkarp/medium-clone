@@ -1,6 +1,6 @@
 # Medium clone
 
-### 🖥Deploy: https://urfeen.github.io/medium-clone/
+### 🖥Deploy: https://mykkarp.github.io/medium-clone/
 ___
 
 ### 🛠Functionality
